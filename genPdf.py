@@ -1,16 +1,31 @@
 #!/usr/bin/env python
 
+# Technical debt: The interface for adding a custom font doesn't actually
+# work the way Weasyprint's documentation says it is supposed to work.
+# I may just have to make Caulixtle008 a system font, and do things the
+# way we did with older versions of WeasyPrint (yes, I have had to tell
+# DevOps in a previous job "When you make a server which runs this program, 
+# you must install this font following these steps, otherwise Weasyprint 
+# will not correctly render")
+
 # This uses the version of Python included with CentOS 7 (Python2)
 
 import sys, re
 from weasyprint import HTML, CSS
 from weasyprint.fonts import FontConfiguration
 
+try:
+	outputFile = sys.argv[1]
+except:
+	print "Usage: genPdf.py {PDF output file} {XML file1} {XML file2} ..."
+	sys,exit(1)
+
+# This does not actually work...
 font_config = FontConfiguration()
 
 # The HTML used to make puzzles
 
-puzzleTemplate = """<div class=p7p>
+puzzleTemplate = """
 <table>
 <tr>
 <td class=a>Q11</td>
@@ -70,7 +85,7 @@ puzzleTemplate = """<div class=p7p>
 <td class=ld>Q77</td>
 <tr>
 </table>
-</div>"""
+"""
 
 # The CSS for puzzles
 puzzleCSS = """@font-face {
@@ -79,6 +94,13 @@ puzzleCSS = """@font-face {
          format('woff');
 }
 body { font-family: Caulixtla; }
+.p7p {
+	font-family: Caulixtla;
+        font-size: x-large;
+        margin: 0;
+        padding: 0;
+        border-collapse: collapse;
+}
 .p7p table {
 	font-family: Caulixtla;
         font-size: x-large;
@@ -87,6 +109,9 @@ body { font-family: Caulixtla; }
         border-collapse: collapse;
 }
 .p7p td {
+	padding: 1em;
+}
+.p7p td table td {
         width: 1em;
         height: 1em;
         padding: .1em;
@@ -165,24 +190,44 @@ body { font-family: Caulixtla; }
 }
 """
 
-# For this version, we just use a hard-coded puzzle.  
 # Here, 0 means "blank space"
-puzzleQuestion = [6,0,4,0,2,0,3,0,5,0,0,0,1,0,1,0,0,2,0,0,4,0,0,7,0,6,0,0,4,
-		0,0,5,0,0,2,0,1,0,0,0,6,0,3,0,5,0,1,0,7]
+if len(sys.argv) <= 2:
+	puzzleQuestion = [[6,0,4,0,2,0,3,0,5,0,0,0,1,0,1,0,0,2,0,0,4,0,0,7,0,
+		6,0,0,4,0,0,5,0,0,2,0,1,0,0,0,6,0,3,0,5,0,1,0,7]]
+else:
+	puzzleQuestion = []
+	for index in range(2,len(sys.argv)):
+		f = open(sys.argv[index])
+		i = f.read()
+		q = re.split('\n+',i)
+		q = q[1]
+		q = re.sub('.*question difficult[^>]*>','',q)
+		q = re.sub('</question.*','',q)
+		z = re.split(' ',q)
+		puzzleQuestion.append(z)
 
-index = 0
-puzzleHTML = puzzleTemplate
-for column in range(1,8):
-	for row in range(1,8):
-		replace = "Q" + str(column) + str(row)	
-		if puzzleQuestion[index] == 0:
-			puzzleQuestion[index] = "&nbsp;"
-		puzzleHTML = re.sub(replace, str(puzzleQuestion[index]),
-				puzzleHTML)
-		index += 1
+allHTML = "<div class=p7p><table><tr><td>"
+for puzzle in range(len(puzzleQuestion)):
+	index = 0
+	puzzleHTML = puzzleTemplate
+	for column in range(1,8):
+		for row in range(1,8):
+			replace = "Q" + str(column) + str(row)	
+			thisNumber = puzzleQuestion[puzzle][index]
+			if int(thisNumber) == 0:
+				thisNumber = "&nbsp;"
+			puzzleHTML = re.sub(replace,str(thisNumber),puzzleHTML)
+			index += 1
+	allHTML += puzzleHTML	
+	if (puzzle % 2) == 0:
+		allHTML += "</td><td>"
+	else:
+		allHTML += "</td></tr><tr><td>"
 
-html = HTML(string=puzzleHTML)
+allHTML += "</td></tr></table></div>"
+
+html = HTML(string=allHTML)
 css = CSS(string=puzzleCSS, font_config = font_config)
-html.write_pdf('Sudoku7.pdf', stylesheets=[css], font_config=font_config)
+html.write_pdf(outputFile, stylesheets=[css], font_config=font_config)
 
-print "Sudoku7.pdf written"
+print outputFile + " written"
