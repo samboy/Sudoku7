@@ -15,7 +15,28 @@ days to make a seven page book.
 The purpose of this project is to make the entire process of making a
 7x7 Sudoku puzzle easier.
 
-# To use
+# To play
+
+Open up the file example.pdf.
+
+This puzzle is a variant of Sudoku I like to call "Prosperity 7".  In
+this Sudoku variant, the board is only 7x7, and only the numbers
+from 1 to 7 are used.  Neither 8 nor 9 are ever placed on this
+board.
+
+The object of this puzzle is to place the numbers 1 through 7 in the
+blank spaces such that:
+
+* Each row only has one instance of each number between 1 and 7.  In
+  other words, no number is duplicated in a given row.
+
+* Each column only has one instance of each number between 1 and 7.  In
+  other words, no number is duplicated in a given column.
+
+* Each of the seven-square shapes bordered by thick lines have all
+  of the numbers between 1 and 7 precisely once.  
+
+# To generate PDF files
 
 Have Python installed.  Ideally, use a virtual environment.  Then:
 
