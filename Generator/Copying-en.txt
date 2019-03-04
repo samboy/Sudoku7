@@ -1,0 +1,20 @@
+             Licensing Policy of Number Place Generator
+
+
+Time Intermedia provides Number Place Generator under two licences,
+designed to meet the usage and distribution requirements of types
+of users.
+
+GPL License:
+If you are developing and distributing open source applications
+under the GPL License, then you are free to use this program under
+the GPL License.
+
+Commercial License:
+For OEMs, ISVs, and VARs who distribute this program with their
+products, and do not license and distribute their source code under
+the GPL, Time Intermedia provides OEM Commercial License.
+To buy Commercial License, please Contact Time Intermedia
+<puzzle@timedia.co.jp>.
+
+Number Place Generator Version 2.0, December 18, 2007
