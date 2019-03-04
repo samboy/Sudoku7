@@ -1,0 +1,185 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><title>Sudoku7 example</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+@font-face {
+    font-family: 'Caulixtla';
+    src: url('Caulixtla008.woff')
+         format('woff');
+}
+</style>
+</head>
+<body>
+<style>
+body { font-family: Caulixtla; }
+.p7p table {
+	font-size: x-large;
+	margin: 0;
+	padding: 0;
+	border-collapse: collapse;
+}
+.p7p td {
+        width: 1em;
+        height: 1em;
+        padding: .1em;
+	border-collapse: collapse;
+        text-align: center;
+}
+.a {
+        border-left: 3px solid black;
+        border-top: 3px solid black;
+}
+.b      {
+        border-left: 1px solid black;
+        border-top: 3px solid black;
+}
+.c      {
+        border-left: 1px solid black;
+        border-top: 3px solid black;
+        border-right: 3px solid black;
+}
+.d {
+        border-left: 3px solid black;
+        border-top: 1px solid black;
+}
+.e      {
+        border-left: 1px solid black;
+        border-top: 1px solid black;
+}
+.f      {
+        border-left: 1px solid black;
+        border-top: 1px solid black;
+        border-right: 3px solid black;
+}
+.g      {
+        border-left: 1px solid black;
+        border-top: 3px solid black;
+        border-right: 3px solid black;
+}
+.h      {
+        border-left: 3px solid black;
+        border-top: 3px solid black;
+        border-right: 3px solid black;
+}
+.i      {
+	background-position: left top;
+	background-repeat: no-repeat;
+        border-left: 1px solid black;
+        border-top: 1px solid black;
+}
+.j      {
+	background-position: left top;
+	background-repeat: no-repeat;
+        border-left: 1px solid black;
+        border-top: 1px solid black;
+	border-right: 3px solid black;
+}
+.la     {
+        border-left: 3px solid black;
+        border-top: 1px solid black;
+        border-bottom: 3px solid black;
+}
+.lb     {
+        border-left: 1px solid black;
+        border-top: 1px solid black;
+        border-bottom: 3px solid black;
+}
+.lc     {
+        border-left: 1px solid black;
+        border-top: 3px solid black;
+        border-bottom: 3px solid black;
+}
+.ld     {
+        border-left: 1px solid black;
+        border-top: 1px solid black;
+        border-right: 3px solid black;
+        border-bottom: 3px solid black;
+}
+</style>
+<div class=p7p>
+<table>
+<tr>
+<td class=a>5</td>
+<td class=b>&nbsp;</td>
+<td class=b>7</td>
+<td class=a>&nbsp;</td>
+<td class=a>2</td>
+<td class=b>&nbsp;</td>
+<td class=c>4</td>
+<tr>
+<td class=d>&nbsp;</td>
+<td class=e>6</td>
+<td class=e>&nbsp;</td>
+<td class=d>&nbsp;</td>
+<td class=a>&nbsp;</td>
+<td class=d>3</td>
+<td class=f>&nbsp;</td>
+<tr>
+<td class=d>3</td>
+<td class=a>&nbsp;</td>
+<td class=b>&nbsp;</td>
+<td class=i>5</td>
+<td class=d>&nbsp;</td>
+<td class=d>&nbsp;</td>
+<td class=f>7</td>
+<tr>
+<td class=a>&nbsp;</td>
+<td class=i>&nbsp;</td>
+<td class=a>1</td>
+<td class=b>&nbsp;</td>
+<td class=i>6</td>
+<td class=a>&nbsp;</td>
+<td class=g>&nbsp;</td>
+<tr>
+<td class=a>4</td>
+<td class=b>&nbsp;</td>
+<td class=d>&nbsp;</td>
+<td class=a>7</td>
+<td class=b>&nbsp;</td>
+<td class=i>&nbsp;</td>
+<td class=h>6</td>
+<tr>
+<td class=d>&nbsp;</td>
+<td class=e>7</td>
+<td class=d>&nbsp;</td>
+<td class=d>&nbsp;</td>
+<td class=a>&nbsp;</td>
+<td class=b>4</td>
+<td class=j>&nbsp;</td>
+<tr>
+<td class=la>6</td>
+<td class=lb>&nbsp;</td>
+<td class=lc>2</td>
+<td class=la>&nbsp;</td>
+<td class=la>5</td>
+<td class=lb>&nbsp;</td>
+<td class=ld>1</td>
+<tr>
+</table>
+</div>
+
+<p>
+
+This puzzle is a variant of Sudoku I like to call "Prosperity 7".  In
+this Sudoku variant, the board is only 7x7, and only the numbers
+from 1 to 7 are used.  Neither 8 nor 9 are ever placed on this
+board.
+
+<p>
+
+The object of this puzzle is to place the numbers 1 through 7 in the
+blank spaces such that:
+
+<ul>
+<li>Each row only has one instance of each number between 1 and 7.  In
+    other words, no number is duplicated in a given row.
+
+<li>Each column only has one instance of each number between 1 and 7.  In
+    other words, no number is duplicated in a given column.
+
+<li>Each of the seven-square shapes bordered by thick lines have all
+    of the numbers between 1 and 7 precisely once.  
+
+</ul>
+
+</body></html>
