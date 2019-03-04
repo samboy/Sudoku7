@@ -1,5 +1,6 @@
-Caulixtla008.woff is a variant of
-Matthew Carter's Bitstream Charter and its derivative Charis SIL
+Caulixtla008.woff is a variant of Matthew Carter's Bitstream Charter and 
+its derivative Charis SIL.  The infinity symbol comes from Source Serif 
+Pro.
 
 The font is an open source font and is used in compliance with its
 license.  Read below for legal details.
@@ -31,6 +32,14 @@ with Reserved Font Names "Charis" and "SIL".
 This Font Software is licensed under the SIL Open Font License, Version 1.1.
 This license is copied below, and is also available with a FAQ at:
 http://scripts.sil.org/OFL
+
+---
+
+This is the license for Source Serif Pro (we use its infinity symbol):
+
+Copyright 2014 Adobe Systems Incorporated (http://www.adobe.com/), with Reserved Font Name 'Source'. All Rights Reserved. Source is a trademark of Adobe Systems Incorporated in the United States and/or other countries.
+
+This Font Software is licensed under the SIL Open Font License, Version 1.1.
 
 ---
 
