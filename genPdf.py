@@ -220,19 +220,34 @@ else:
 	for index in range(2,len(sys.argv)):
 		f = open(sys.argv[index])
 		i = f.read()
+		# Grab question to print
 		q = re.split('\n+',i)
-		q = s = q[1]
+		q = s = g = q[1]
 		q = re.sub('.*question difficult[^>]*>','',q)
 		q = re.sub('</question.*','',q)
+		# Grab answer to make sure we do not have dup puzzles
 		s = re.sub('^.*<answer>','',s)	
 		s = re.sub('</answer.*$','',s)
 		s = re.sub(' ','',s)
 		s = normString(s)
+		# Grab block arrangement ("group") to make sure we are
+		# using the right one
+		g = re.sub('</group.*','',g);
+		g = re.sub('^.*<group[^>]*>','',g);
+		g = re.sub(' ','',g)
+		g = normString(g)
 		z = re.split(' ',q)
+		usePuzzle = True
+		if g != '1112333111243312224332244455664555766457776665777':
+			print("Puzzle " + sys.argv[index] + 
+				" has incompatible design")
+			print "Skipping"
+			usePuzzle = False
 		if s in allSeen.keys():
 			print "Puzzle " + sys.argv[index] + " already seen"
 			print "Skipping"
-		else:
+			usePuzzle = False
+		if usePuzzle:
 			puzzleQuestion.append(z)
 		allSeen[s] = 1
 
