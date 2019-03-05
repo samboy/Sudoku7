@@ -236,9 +236,11 @@ else:
 			puzzleQuestion.append(z)
 		allSeen[s] = 1
 
-allHTML = "<div class=p7p><table><tr><td>"
+allHTML = ""
 pageNum = 1
 for puzzle in range(len(puzzleQuestion)):
+	if (puzzle % 6) == 0:
+		allHTML += "<div class=p7p><table><tr><td>"
 	index = 0
 	puzzleHTML = puzzleTemplate
 	for column in range(1,8):
@@ -258,9 +260,10 @@ for puzzle in range(len(puzzleQuestion)):
 		allHTML += "</td></tr></table></div>"
 		allHTML += "Page " + str(pageNum)
 		pageNum += 1
-		allHTML += "<div class=p7p><table><tr><td>"
 
-allHTML += "</td></tr></table></div>"
+if (puzzle % 6) != 5:
+	allHTML += "</td></tr></table></div>"
+	allHTML += "Page " + str(pageNum)
 
 html = HTML(string=allHTML)
 css = CSS(string=puzzleCSS, font_config = font_config)
