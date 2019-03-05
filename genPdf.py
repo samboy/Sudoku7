@@ -113,16 +113,15 @@ puzzleCSS = """@font-face {
 body { font-family: Caulixtla; }
 .p7p {
 	font-family: Caulixtla;
-        font-size: x-large;
+        font-size: 24px;
         margin: 0;
         padding: 0;
         border-collapse: collapse;
         page-break-inside: avoid;
-        page-break-after: auto;
 }
 .p7p table {
 	font-family: Caulixtla;
-        font-size: x-large;
+        font-size: 24px;
         margin: 0;
         padding: 0;
         border-collapse: collapse;
@@ -134,6 +133,8 @@ body { font-family: Caulixtla; }
         width: 1em;
         height: 1em;
         padding: .1em;
+	padding-left: .2em;
+	padding-right: .2em;
         border-collapse: collapse;
         text-align: center;
 }
@@ -236,6 +237,7 @@ else:
 		allSeen[s] = 1
 
 allHTML = "<div class=p7p><table><tr><td>"
+pageNum = 1
 for puzzle in range(len(puzzleQuestion)):
 	index = 0
 	puzzleHTML = puzzleTemplate
@@ -254,6 +256,8 @@ for puzzle in range(len(puzzleQuestion)):
 		allHTML += "</td></tr><tr><td>"
 	if (puzzle % 6) == 5: # Page break after six puzzles
 		allHTML += "</td></tr></table></div>"
+		allHTML += "Page " + str(pageNum)
+		pageNum += 1
 		allHTML += "<div class=p7p><table><tr><td>"
 
 allHTML += "</td></tr></table></div>"
