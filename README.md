@@ -85,9 +85,9 @@ Do the following to generate a puzzle:
 To the right of the button `Answer`, it shows how hard the puzzle is
 (the more "points" a puzzle has, the harder it is to solve)
 
-It's possible to change where we put number hints; one can observe a number
-of different patterns for hints in the example.pdf file supplied here.  
-After opening up the `Prosperity-7-template.xml` file, click on `Set`
+It's possible to change where we put number hints (one can observe a number
+of different patterns for hints in the example.pdf file supplied 
+here):  After opening up the `Prosperity-7-template.xml` file, click on `Set`
 then right click to add or remove blue squares (squares were we put
 number clues in a puzzle).
 
