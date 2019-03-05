@@ -23,6 +23,23 @@ except:
 # This does not actually work...
 font_config = FontConfiguration()
 
+# Helper function: Given a string of numbers between 1 and 9, normalize
+# the numbers so that 1 is the first unique number, 2 is the second unique 
+# number, and so on
+def normString(i):
+	map = {}
+	max = 1
+	out = ""
+	for c in i:
+		if not c in map.keys():
+			map[c] = str(max)
+			max += 1
+			if max >= 10:
+				print "Warning:	normString too many numbers"
+				max = 0
+		out += map[c]
+	return out
+
 # The HTML used to make puzzles
 
 puzzleTemplate = """
@@ -100,6 +117,8 @@ body { font-family: Caulixtla; }
         margin: 0;
         padding: 0;
         border-collapse: collapse;
+        page-break-inside: avoid;
+        page-break-after: auto;
 }
 .p7p table {
 	font-family: Caulixtla;
@@ -190,6 +209,7 @@ body { font-family: Caulixtla; }
 }
 """
 
+allSeen = {}
 # Here, 0 means "blank space"
 if len(sys.argv) <= 2:
 	puzzleQuestion = [[6,0,4,0,2,0,3,0,5,0,0,0,1,0,1,0,0,2,0,0,4,0,0,7,0,
@@ -200,11 +220,20 @@ else:
 		f = open(sys.argv[index])
 		i = f.read()
 		q = re.split('\n+',i)
-		q = q[1]
+		q = s = q[1]
 		q = re.sub('.*question difficult[^>]*>','',q)
 		q = re.sub('</question.*','',q)
+		s = re.sub('^.*<answer>','',s)	
+		s = re.sub('</answer.*$','',s)
+		s = re.sub(' ','',s)
+		s = normString(s)
 		z = re.split(' ',q)
-		puzzleQuestion.append(z)
+		if s in allSeen.keys():
+			print "Puzzle " + sys.argv[index] + " already seen"
+			print "Skipping"
+		else:
+			puzzleQuestion.append(z)
+		allSeen[s] = 1
 
 allHTML = "<div class=p7p><table><tr><td>"
 for puzzle in range(len(puzzleQuestion)):
@@ -221,8 +250,11 @@ for puzzle in range(len(puzzleQuestion)):
 	allHTML += puzzleHTML	
 	if (puzzle % 2) == 0:
 		allHTML += "</td><td>"
-	else:
+	else: # Line break every other puzzle
 		allHTML += "</td></tr><tr><td>"
+	if (puzzle % 6) == 5: # Page break after six puzzles
+		allHTML += "</td></tr></table></div>"
+		allHTML += "<div class=p7p><table><tr><td>"
 
 allHTML += "</td></tr></table></div>"
 
