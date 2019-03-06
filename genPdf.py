@@ -17,11 +17,11 @@ from weasyprint.fonts import FontConfiguration
 try:
 	outputFile = sys.argv[1]
 except:
-	print "Usage: genPdf.py {PDF output file} {XML file1} {XML file2} ..."
+	print("Usage: genPdf.py {PDF output file} {XML file1} {XML file2} ...")
 	sys,exit(1)
 
 if not re.search('\.[pP][dD][fF]$',outputFile):
-	print "Output file must be a .pdf file, e.g. genPdf.py foo.pdf"
+	print("Output file must be a .pdf file, e.g. genPdf.py foo.pdf")
 	sys.exit(1)
 
 # This does not actually work...
@@ -39,7 +39,7 @@ def normString(i):
 			map[c] = str(max)
 			max += 1
 			if max >= 10:
-				print "Warning:	normString too many numbers"
+				print("Warning:	normString too many numbers")
 				max = 0
 		out += map[c]
 	return out
@@ -245,11 +245,11 @@ else:
 		if g != '1112333111243312224332244455664555766457776665777':
 			print("Puzzle " + sys.argv[index] + 
 				" has incompatible design")
-			print "Skipping"
+			print("Skipping")
 			usePuzzle = False
 		if s in allSeen.keys():
-			print "Puzzle " + sys.argv[index] + " already seen"
-			print "Skipping"
+			print("Puzzle " + sys.argv[index] + " already seen")
+			print("Skipping")
 			usePuzzle = False
 		if usePuzzle:
 			puzzleQuestion.append(z)
@@ -288,4 +288,4 @@ html = HTML(string=allHTML)
 css = CSS(string=puzzleCSS, font_config = font_config)
 html.write_pdf(outputFile, stylesheets=[css], font_config=font_config)
 
-print outputFile + " written"
+print(outputFile + " written")
