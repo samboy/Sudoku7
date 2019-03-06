@@ -36,6 +36,9 @@ blank spaces such that:
 * Each of the seven-square shapes bordered by thick lines have all
   of the numbers between 1 and 7 precisely once.  
 
+The puzzles in example.pdf are sorted by difficulty, starting
+with easier puzzles and moving up to hard puzzles.
+
 # To generate PDF files
 
 Have Python installed.  Ideally, use a virtual environment.  Then:
