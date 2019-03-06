@@ -41,7 +41,8 @@ with easier puzzles and moving up to hard puzzles.
 
 # To generate PDF files
 
-Have Python installed.  Ideally, use a virtual environment.  Then:
+Have Python (either Python2 or Python3; the script is a polyglot) installed.  
+Ideally, use a virtual environment.  Then:
 
 ```
 pip install -r requirements.txt
