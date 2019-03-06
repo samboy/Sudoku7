@@ -229,7 +229,10 @@ else:
                         i = "Broken"
                 # Grab question to print
                 q = re.split('\n+',i)
-                q = s = g = q[1]
+                try:
+                        q = s = g = q[1]
+                except:
+                        q = s = g = "Broken"
                 q = re.sub('.*question difficult[^>]*>','',q)
                 q = re.sub('</question.*','',q)
                 # Grab answer to make sure we do not have dup puzzles
