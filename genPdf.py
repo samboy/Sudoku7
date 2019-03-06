@@ -20,6 +20,10 @@ except:
 	print "Usage: genPdf.py {PDF output file} {XML file1} {XML file2} ..."
 	sys,exit(1)
 
+if not re.search('\.[pP][dD][fF]$',outputFile):
+	print "Output file must be a .pdf file, e.g. genPdf.py foo.pdf"
+	sys.exit(1)
+
 # This does not actually work...
 font_config = FontConfiguration()
 
