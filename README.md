@@ -86,13 +86,13 @@ To the right of the button `Answer`, it shows how hard the puzzle is
 (the more "points" a puzzle has, the harder it is to solve)
 
 It's possible to change where we put number hints (one can observe a number
-of different patterns for hints in the example.pdf file supplied here).  
-After opening up the `Prosperity-7-template.xml` file, click on `Set`
+of different patterns for hints in the example.pdf file supplied 
+here):  After opening up the `Prosperity-7-template.xml` file, click on `Set`
 then right click to add or remove blue squares (squares were we put
 number clues in a puzzle).
 
 Note that in order to print, the puzzle `.xml` files need to be 7x7 files
-using the same block arrangement (same set of heptominos used the generate
+using the same block arrangement (same set of heptominoes used the generate
 the 7x7 square).  The PDF generator can handle different location for the
 number hints; it can *not* handle a different arrangement of sub-blocks
 nor a different puzzle size (the PDF generator will not print incompatible 
