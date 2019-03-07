@@ -25,6 +25,9 @@ if not re.search('\.[pP][dD][fF]$',outputFile):
         print("Output file must be a .pdf file, e.g. genPdf.py foo.pdf")
         sys.exit(1)
 
+title = outputFile
+title = re.sub('.[pP][dD][fF]$','',title)
+
 # This does not actually work...
 font_config = FontConfiguration()
 
@@ -280,7 +283,7 @@ for puzzle in range(len(puzzleQuestion)):
                 allHTML += "</td></tr><tr><td>"
         if (puzzle % 6) == 5: # Page break after six puzzles
                 allHTML += "</td></tr></table></div>"
-                allHTML += "Page " + str(pageNum)
+                allHTML += title + " &mdash; Page " + str(pageNum)
                 pageNum += 1
 
 if (puzzle % 6) != 5:
