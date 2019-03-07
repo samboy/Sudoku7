@@ -5,7 +5,12 @@
 # For the fonts to properly render, Caulixtla008.woff needs to be
 # a font fontconfig can find.  See this page for notes:
 # https://weasyprint.readthedocs.io/en/latest/features.html#fonts
-# Example (CentOS 7) (remove hashes):
+# Example #1 (Windows + Cygwin, should work elsewhere) (remove hashes):
+
+# mkdir ~/.fonts
+# cp Caulixtla008.woff ~/.fonts
+
+# Example #2 (CentOS 7 system-level install) (remove hashes):
 
 # mkdir /usr/share/fonts/Caulixtla008
 # cp Caulixtla008.woff /usr/share/fonts/Caulixtla008/
