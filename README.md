@@ -104,3 +104,27 @@ files).
 
 Converting the Java program in to one which can run in batch mode is
 currently an exercise for the reader.
+
+# Installing the Caulixtla008 font
+
+While the puzzles look perfectly fine using the Weasyprint
+default font, one can optionally install the Caulixtla008.woff
+font.  See this page for notes:
+
+>https://weasyprint.readthedocs.io/en/latest/features.html#fonts
+
+Example #1 (Windows + Cygwin, should work elsewhere):
+
+```
+mkdir ~/.fonts
+cp Caulixtla008.woff ~/.fonts
+```
+
+Example #2 (CentOS 7 system-level install):
+
+```
+mkdir /usr/share/fonts/Caulixtla008
+cp Caulixtla008.woff /usr/share/fonts/Caulixtla008/
+fc-cache
+```
+
