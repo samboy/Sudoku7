@@ -2,8 +2,10 @@
 
 # This uses the version of Python included with CentOS 7 (Python2)
 # The code also works with Python3
-# For the fonts to properly render, Caulixtla008.woff needs to be
-# a font fontconfig can find.  See this page for notes:
+
+# While the puzzles look perfectly fine using the Weasyprint
+# default font, one can optionally install the Caulixtla008.woff
+# font.  See this page for notes:
 # https://weasyprint.readthedocs.io/en/latest/features.html#fonts
 # Example #1 (Windows + Cygwin, should work elsewhere) (remove hashes):
 
