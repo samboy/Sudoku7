@@ -1,14 +1,15 @@
 #!/usr/bin/env python
 
-# Technical debt: The interface for adding a custom font doesn't actually
-# work the way Weasyprint's documentation says it is supposed to work.
-# I may just have to make Caulixtle008 a system font, and do things the
-# way we did with older versions of WeasyPrint (yes, I have had to tell
-# DevOps in a previous job "When you make a server which runs this program,
-# you must install this font following these steps, otherwise Weasyprint
-# will not correctly render")
-
 # This uses the version of Python included with CentOS 7 (Python2)
+# The code also works with Python3
+# For the fonts to properly render, Caulixtla008.woff needs to be
+# a font fontconfig can find.  See this page for notes:
+# https://weasyprint.readthedocs.io/en/latest/features.html#fonts
+# Example (CentOS 7) (remove hashes):
+
+# mkdir /usr/share/fonts/Caulixtla008
+# cp Caulixtla008.woff /usr/share/fonts/Caulixtla008/
+# fc-cache
 
 import sys, re
 from weasyprint import HTML, CSS
@@ -109,14 +110,10 @@ puzzleTemplate = """
 """
 
 # The CSS for puzzles
-puzzleCSS = """@font-face {
-    font-family: 'Caulixtla';
-    src: url('Caulixtla008.woff')
-         format('woff');
-}
-body { font-family: Caulixtla; }
+puzzleCSS = """
+body { font-family: Caulixtla008; }
 .p7p {
-        font-family: Caulixtla;
+        font-family: Caulixtla008;
         font-size: 24px;
         margin: 0;
         padding: 0;
@@ -124,14 +121,14 @@ body { font-family: Caulixtla; }
         page-break-inside: avoid;
 }
 .p7p table {
-        font-family: Caulixtla;
+        font-family: Caulixtla008;
         font-size: 24px;
         margin: 0;
         padding: 0;
         border-collapse: collapse;
 }
 .p7p td {
-        padding: 1em;
+        padding: .9em;
 }
 .p7p td table td {
         width: 1em;
