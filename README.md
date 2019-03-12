@@ -56,6 +56,12 @@ program in the `Generator/` directory (to get one started, I have
 included a number of already generated puzzles in the `puzzles/`
 directory).
 
+It is also possible to use the script to only look for duplicate puzzles:
+
+```
+./genPdf.py dupcheck puzzles/*.xml
+```
+
 # Generating more puzzles
 
 To generate more puzzles, we need a Java interpreter.  Both Oracle

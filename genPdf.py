@@ -28,7 +28,11 @@ except:
         print("Usage: genPdf.py {PDF output file} {XML file1} {XML file2} ...")
         sys,exit(1)
 
-if not re.search('\.[pP][dD][fF]$',outputFile):
+dupCheckOnly = False
+if outputFile == "dupcheck":
+    dupCheckOnly = True
+
+if (not dupCheckOnly) and (not re.search('\.[pP][dD][fF]$',outputFile)):
         print("Output file must be a .pdf file, e.g. genPdf.py foo.pdf")
         sys.exit(1)
 
@@ -242,17 +246,20 @@ else:
                         q = s = g = "Broken"
                 q = re.sub('.*question difficult[^>]*>','',q)
                 q = re.sub('</question.*','',q)
+
                 # Grab answer to make sure we do not have dup puzzles
                 s = re.sub('^.*<answer>','',s)
                 s = re.sub('</answer.*$','',s)
                 s = re.sub(' ','',s)
                 s = normString(s)
+
                 # Grab block arrangement ("group") to make sure we are
                 # using the right one
                 g = re.sub('</group.*','',g);
                 g = re.sub('^.*<group[^>]*>','',g);
                 g = re.sub(' ','',g)
                 g = normString(g)
+
                 z = re.split(' ',q)
                 usePuzzle = True
                 if g != '1112333111243312224332244455664555766457776665777':
@@ -261,12 +268,14 @@ else:
                         print("Skipping")
                         usePuzzle = False
                 if s in allSeen.keys():
-                        print("Puzzle " + sys.argv[index] + " already seen")
+                        print("Puzzle " + sys.argv[index] + " already seen in "
+                    + allSeen[s])
                         print("Skipping")
                         usePuzzle = False
+                else:
+                        allSeen[s] = sys.argv[index]
                 if usePuzzle:
                         puzzleQuestion.append(z)
-                allSeen[s] = 1
 
 allHTML = ""
 pageNum = 1
@@ -296,6 +305,10 @@ for puzzle in range(len(puzzleQuestion)):
 if (puzzle % 6) != 5:
         allHTML += "</td></tr></table></div>"
         allHTML += "Page " + str(pageNum)
+
+if dupCheckOnly:
+    print("Dup check performed")
+    sys.exit(1)
 
 html = HTML(string=allHTML)
 css = CSS(string=puzzleCSS, font_config = font_config)
