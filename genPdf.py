@@ -29,6 +29,7 @@ except:
         sys,exit(1)
 
 dupCheckOnly = False
+dupsFound = False
 if outputFile == "dupcheck":
     dupCheckOnly = True
 
@@ -270,8 +271,10 @@ else:
                 if s in allSeen.keys():
                         print("Puzzle " + sys.argv[index] + " already seen in "
                     + allSeen[s])
-                        print("Skipping")
+                        if not dupCheckOnly:
+                                print("Skipping")
                         usePuzzle = False
+                        dupsFound = True
                 else:
                         allSeen[s] = sys.argv[index]
                 if usePuzzle:
@@ -308,6 +311,8 @@ if (puzzle % 6) != 5:
 
 if dupCheckOnly:
     print("Dup check performed")
+    if not dupsFound:
+            print("No duplicate puzzles found")
     sys.exit(1)
 
 html = HTML(string=allHTML)
