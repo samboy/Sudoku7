@@ -85,7 +85,15 @@ cd Generator/
 ```
 
 This will run the Java generator in batch mode.  It will take about a 
-minute to generate 18 puzzles.
+minute to generate 18 puzzles.  The generated puzzles will be in a
+directory called `Puzzles/`; to make a PDF file:
+
+```
+cd Generator/
+./generatePuzzles.sh
+cd ..
+./genPdf.py output.pdf Generator/Puzzles/*xml
+```
 
 # Generating puzzles by hand
 
