@@ -66,7 +66,8 @@ It is also possible to use the script to only look for duplicate puzzles:
 
 To generate more puzzles, we need a Java interpreter.  Both Oracle
 Java 8 and OpenJDK 1.8.0_191 (i.e. the OpenJDK included with CentOS 7)
-work with the supplied jar file which generates the puzzles.
+work with the supplied jar file which generates the puzzles in batch 
+mode.
 
 To run the puzzle generator, make sure to be in a GUI environment (X
 windows, Windows 10, etc.) and run the following commands:
@@ -79,11 +80,16 @@ cd Generator/
 This will run the Java generator in batch mode.  It will take about a 
 minute to generate 18 puzzles.
 
-# Generating other puzzle patterns
+# Generating puzzles by hand
 
 In a GUI environment with Java installed, double clicking on the
 `Sudoku-NPGeneratorV2_0_2.jar` file in the `Generator/` directory
-should open up a generator.
+should open up a generator.  With a command line, it would be:
+
+```
+cd Generator/
+java -jar Sudoku-NPGeneratorV2_0_2.jar
+```
 
 At this point a GUI window will open with the Sudoku generator.
 Do the following to generate a puzzle:
@@ -110,11 +116,8 @@ Note that in order to print, the puzzle `.xml` files need to be 7x7 files
 using the same block arrangement (same set of heptominoes used the generate
 the 7x7 square).  The PDF generator can handle different location for the
 number hints; it can *not* handle a different arrangement of sub-blocks
-nor a different puzzle size (the PDF generator will not print incompatible 
-files).
-
-Converting the Java program in to one which can run in batch mode is
-currently an exercise for the reader.
+nor a different puzzle size (the PDF generator will refuse to print 
+incompatible files).
 
 # Installing the Caulixtla008 font
 
