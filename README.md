@@ -76,8 +76,8 @@ cd Generator/
 ./generatePuzzles.sh
 ```
 
-This will run the Java generator in a mostly batch mode; we still need
-to click on "no" when saving each file (fixing this bug is my next project).
+This will run the Java generator in batch mode.  It will take about a 
+minute to generate 18 puzzles.
 
 # Generating other puzzle patterns
 
