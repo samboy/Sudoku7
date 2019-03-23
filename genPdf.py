@@ -253,6 +253,7 @@ else:
                 s = re.sub('</answer.*$','',s)
                 s = re.sub(' ','',s)
                 s = normString(s)
+                upsideDownS = normString(s[::-1])
 
                 # Grab block arrangement ("group") to make sure we are
                 # using the right one
@@ -271,6 +272,15 @@ else:
                 if s in allSeen.keys():
                         print("Puzzle " + sys.argv[index] + " already seen in "
                     + allSeen[s])
+                        if not dupCheckOnly:
+                                print("Skipping")
+                        usePuzzle = False
+                        dupsFound = True
+                # Since we have point symmetry with the heptomino pattern, 
+                # rotated upside down puzzles are dups
+                if upsideDownS in allSeen.keys():
+                        print("Puzzle " + sys.argv[index] + " is inverse of "
+                    + allSeen[upsideDownS])
                         if not dupCheckOnly:
                                 print("Skipping")
                         usePuzzle = False
