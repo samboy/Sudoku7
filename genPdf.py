@@ -32,6 +32,8 @@ dupCheckOnly = False
 dupsFound = False
 if outputFile == "dupcheck":
     dupCheckOnly = True
+if outputFile == "dup":
+    dupCheckOnly = True
 
 if (not dupCheckOnly) and (not re.search('\.[pP][dD][fF]$',outputFile)):
         print("Output file must be a .pdf file, e.g. genPdf.py foo.pdf")
