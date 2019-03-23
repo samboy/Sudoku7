@@ -56,6 +56,12 @@ program in the `Generator/` directory (to get one started, I have
 included a number of already generated puzzles in the `puzzles/`
 directory).
 
+It is also possible to use the script to only look for duplicate puzzles:
+
+```
+./genPdf.py dupcheck puzzles/*.xml
+```
+
 # Generating more puzzles
 
 To generate more puzzles, we need a Java interpreter.  Both Oracle
@@ -73,3 +79,62 @@ cd Generator/
 This will run the Java generator in a mostly batch mode; we still need
 to click on "no" when saving each file (fixing this bug is my next project).
 
+# Generating other puzzle patterns
+
+In a GUI environment with Java installed, double clicking on the
+`Sudoku-NPGeneratorV2_0_2.jar` file in the `Generator/` directory
+should open up a generator.
+
+At this point a GUI window will open with the Sudoku generator.
+Do the following to generate a puzzle:
+
+* Select File -> Open File
+* Open the file `Prosperity-7-template.xml`
+* Click on the button `Set` near the bottom of the window
+* Click on the button `Generate`
+* Click on the button `Play`
+* Select File -> Save file
+* Choose a unique filename for the file
+* Click on `Save`
+
+To the right of the button `Answer`, it shows how hard the puzzle is
+(the more "points" a puzzle has, the harder it is to solve)
+
+It's possible to change where we put number hints (one can observe a number
+of different patterns for hints in the example.pdf file supplied 
+here):  After opening up the `Prosperity-7-template.xml` file, click on `Set`
+then right click to add or remove blue squares (squares were we put
+number clues in a puzzle).
+
+Note that in order to print, the puzzle `.xml` files need to be 7x7 files
+using the same block arrangement (same set of heptominoes used the generate
+the 7x7 square).  The PDF generator can handle different location for the
+number hints; it can *not* handle a different arrangement of sub-blocks
+nor a different puzzle size (the PDF generator will not print incompatible 
+files).
+
+Converting the Java program in to one which can run in batch mode is
+currently an exercise for the reader.
+
+# Installing the Caulixtla008 font
+
+While the puzzles look perfectly fine using the Weasyprint
+default font, one can optionally install the Caulixtla008.woff
+font.  See this page for notes:
+
+>https://weasyprint.readthedocs.io/en/latest/features.html#fonts
+
+Example #1 (Windows + Cygwin, should work elsewhere):
+
+```
+mkdir ~/.fonts
+cp Caulixtla008.woff ~/.fonts
+```
+
+Example #2 (CentOS 7 system-level install):
+
+```
+mkdir /usr/share/fonts/Caulixtla008
+cp Caulixtla008.woff /usr/share/fonts/Caulixtla008/
+fc-cache
+```
