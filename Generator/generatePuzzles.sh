@@ -4,7 +4,7 @@ rm -fr Puzzles/
 mkdir Puzzles/
 
 for TEMPLATE in 1 1 2 3 4 5  ; do
-	for iteration in 1 2 3 ; do
+	for iteration in $( awk 'BEGIN{for(a=1;a<=3;a++){print a}}' ) ; do
 		cp Prosperity-7-template-${TEMPLATE}.xml in.xml
 		rm -f out.xml
 		java -jar SudokuGenerate.jar > /dev/null 2>&1
