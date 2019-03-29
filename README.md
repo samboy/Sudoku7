@@ -84,8 +84,8 @@ cd Generator/
 ./generatePuzzles.sh
 ```
 
-This will run the Java generator in batch mode.  It will take about a 
-minute to generate 18 puzzles.  The generated puzzles will be in a
+This will run the Java generator in batch mode.  It will take about two
+minutes to generate 204 puzzles.  The generated puzzles will be in a
 directory called `Puzzles/`; to make a PDF file:
 
 ```
