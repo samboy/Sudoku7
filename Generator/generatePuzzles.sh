@@ -3,8 +3,8 @@
 rm -fr Puzzles/
 mkdir Puzzles/
 
-for TEMPLATE in 1 1 2 3 4 5  ; do
-	for iteration in $( awk 'BEGIN{for(a=1;a<=2;a++){print a}}' ) ; do
+for iteration in $( awk 'BEGIN{for(a=1;a<=2;a++){print a}}' ) ; do
+	for TEMPLATE in 1 1 2 3 4 5  ; do
 		cp Prosperity-7-template-${TEMPLATE}.xml in.xml
 		rm -f 1.xml 2.xml 3.xml 4.xml 5.xml 6.xml 7.xml 8.xml \
 			9.xml 10.xml 11.xml 12.xml 13.xml 14.xml \
