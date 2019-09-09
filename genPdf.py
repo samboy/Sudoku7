@@ -67,61 +67,61 @@ def normString(i):
 puzzleTemplate = """
 <table>
 <tr>
-<td class=a>Q11</td>
-<td class=b>Q12</td>
-<td class=b>Q13</td>
-<td class=a>Q14</td>
-<td class=a>Q15</td>
-<td class=b>Q16</td>
-<td class=c>Q17</td>
+<td class=K11>Q11</td>
+<td class=K12>Q12</td>
+<td class=K13>Q13</td>
+<td class=K14>Q14</td>
+<td class=K15>Q15</td>
+<td class=K16>Q16</td>
+<td class=K17>Q17</td>
 <tr>
-<td class=d>Q21</td>
-<td class=e>Q22</td>
-<td class=e>Q23</td>
-<td class=d>Q24</td>
-<td class=a>Q25</td>
-<td class=d>Q26</td>
-<td class=f>Q27</td>
+<td class=K21>Q21</td>
+<td class=K22>Q22</td>
+<td class=K23>Q23</td>
+<td class=K24>Q24</td>
+<td class=K25>Q25</td>
+<td class=K26>Q26</td>
+<td class=K27>Q27</td>
 <tr>
-<td class=d>Q31</td>
-<td class=a>Q32</td>
-<td class=b>Q33</td>
-<td class=i>Q34</td>
-<td class=d>Q35</td>
-<td class=d>Q36</td>
-<td class=f>Q37</td>
+<td class=K31>Q31</td>
+<td class=K32>Q32</td>
+<td class=K33>Q33</td>
+<td class=K34>Q34</td>
+<td class=K35>Q35</td>
+<td class=K36>Q36</td>
+<td class=K37>Q37</td>
 <tr>
-<td class=a>Q41</td>
-<td class=i>Q42</td>
-<td class=a>Q43</td>
-<td class=b>Q44</td>
-<td class=i>Q45</td>
-<td class=a>Q46</td>
-<td class=g>Q47</td>
+<td class=K41>Q41</td>
+<td class=K42>Q42</td>
+<td class=K43>Q43</td>
+<td class=K44>Q44</td>
+<td class=K45>Q45</td>
+<td class=K46>Q46</td>
+<td class=K47>Q47</td>
 <tr>
-<td class=a>Q51</td>
-<td class=b>Q52</td>
-<td class=d>Q53</td>
-<td class=a>Q54</td>
-<td class=b>Q55</td>
-<td class=i>Q56</td>
-<td class=h>Q57</td>
+<td class=K51>Q51</td>
+<td class=K52>Q52</td>
+<td class=K53>Q53</td>
+<td class=K54>Q54</td>
+<td class=K55>Q55</td>
+<td class=K56>Q56</td>
+<td class=K57>Q57</td>
 <tr>
-<td class=d>Q61</td>
-<td class=e>Q62</td>
-<td class=d>Q63</td>
-<td class=d>Q64</td>
-<td class=a>Q65</td>
-<td class=b>Q66</td>
-<td class=j>Q67</td>
+<td class=K61>Q61</td>
+<td class=K62>Q62</td>
+<td class=K63>Q63</td>
+<td class=K64>Q64</td>
+<td class=K65>Q65</td>
+<td class=K66>Q66</td>
+<td class=K67>Q67</td>
 <tr>
-<td class=la>Q71</td>
-<td class=lb>Q72</td>
-<td class=lc>Q73</td>
-<td class=la>Q74</td>
-<td class=la>Q75</td>
-<td class=lb>Q76</td>
-<td class=ld>Q77</td>
+<td class=K71>Q71</td>
+<td class=K72>Q72</td>
+<td class=K73>Q73</td>
+<td class=K74>Q74</td>
+<td class=K75>Q75</td>
+<td class=K76>Q76</td>
+<td class=K77>Q77</td>
 <tr>
 </table>
 """
@@ -156,73 +156,83 @@ body { font-family: Caulixtla008; }
         border-collapse: collapse;
         text-align: center;
 }
-.a {
-        border-left: 3px solid black;
-        border-top: 3px solid black;
-}
-.b      {
+.s0XX0  {
         border-left: 1px solid black;
-        border-top: 3px solid black;
+        border-top: 1px solid black;
 }
-.c      {
-        border-left: 1px solid black;
-        border-top: 3px solid black;
-        border-right: 3px solid black;
-}
-.d {
+.s0XX1  {
         border-left: 3px solid black;
         border-top: 1px solid black;
 }
-.e      {
+.s1XX0  {
         border-left: 1px solid black;
-        border-top: 1px solid black;
+        border-top: 3px solid black;
 }
-.f      {
+.s1XX1 {
+        border-left: 3px solid black;
+        border-top: 3px solid black;
+}
+.s0X10  {
         border-left: 1px solid black;
         border-top: 1px solid black;
         border-right: 3px solid black;
 }
-.g      {
+.s0X11  {
+        border-left: 3px solid black;
+        border-top: 1px solid black;
+        border-right: 3px solid black;
+}
+.s1X10  {
         border-left: 1px solid black;
         border-top: 3px solid black;
         border-right: 3px solid black;
 }
-.h      {
+.s1X11 {
         border-left: 3px solid black;
         border-top: 3px solid black;
         border-right: 3px solid black;
 }
-.i      {
-        background-position: left top;
-        background-repeat: no-repeat;
-        border-left: 1px solid black;
-        border-top: 1px solid black;
-}
-.j      {
-        background-position: left top;
-        background-repeat: no-repeat;
-        border-left: 1px solid black;
-        border-top: 1px solid black;
-        border-right: 3px solid black;
-}
-.la     {
-        border-left: 3px solid black;
-        border-top: 1px solid black;
-        border-bottom: 3px solid black;
-}
-.lb     {
+.s01X0  {
         border-left: 1px solid black;
         border-top: 1px solid black;
         border-bottom: 3px solid black;
 }
-.lc     {
+.s01X1  {
+        border-left: 3px solid black;
+        border-top: 1px solid black;
+        border-bottom: 3px solid black;
+}
+.s11X0  {
         border-left: 1px solid black;
         border-top: 3px solid black;
         border-bottom: 3px solid black;
 }
-.ld     {
+.s11X1 {
+        border-left: 3px solid black;
+        border-top: 3px solid black;
+        border-bottom: 3px solid black;
+}
+.s0110  {
         border-left: 1px solid black;
         border-top: 1px solid black;
+        border-right: 3px solid black;
+        border-bottom: 3px solid black;
+}
+.s0111  {
+        border-left: 3px solid black;
+        border-top: 1px solid black;
+        border-right: 3px solid black;
+        border-bottom: 3px solid black;
+}
+.s1110  {
+        border-left: 1px solid black;
+        border-top: 3px solid black;
+        border-right: 3px solid black;
+        border-bottom: 3px solid black;
+}
+.s1111 {
+        border-left: 3px solid black;
+        border-top: 3px solid black;
         border-right: 3px solid black;
         border-bottom: 3px solid black;
 }
@@ -233,8 +243,18 @@ allSeen = {}
 if len(sys.argv) <= 2:
         puzzleQuestion = [[6,0,4,0,2,0,3,0,5,0,0,0,1,0,1,0,0,2,0,0,4,0,0,7,0,
                 6,0,0,4,0,0,5,0,0,2,0,1,0,0,0,6,0,3,0,5,0,1,0,7]]
+        polyominoPattern = [
+            [1,1,1,2,3,3,3,
+             1,1,1,2,4,3,3,
+             1,2,2,2,4,3,3,
+             2,2,4,4,4,5,5,
+             6,6,4,5,5,5,7,
+             6,6,4,5,7,7,7,
+             6,6,6,5,7,7,7]]
+             
 else:
         puzzleQuestion = []
+        polyominoPattern = []
         for index in range(2,len(sys.argv)):
                 f = open(sys.argv[index])
                 try:
@@ -261,15 +281,14 @@ else:
                 # using the right one
                 g = re.sub('</group.*','',g);
                 g = re.sub('^.*<group[^>]*>','',g);
+                pattern = re.split(' ',g)
                 g = re.sub(' ','',g)
                 g = normString(g)
 
                 z = re.split(' ',q)
                 usePuzzle = True
-                if g != '1112333111243312224332244455664555766457776665777':
-                        print("Puzzle " + sys.argv[index] +
-                                " has incompatible design")
-                        print("Skipping")
+                if(len(g) != 49):
+                        print("Puzzle " + sys.argv[index] + " is not 7x7")
                         usePuzzle = False
                 if s in allSeen.keys():
                         print("Puzzle " + sys.argv[index] + " already seen in "
@@ -291,6 +310,7 @@ else:
                         allSeen[s] = sys.argv[index]
                 if usePuzzle:
                         puzzleQuestion.append(z)
+                        polyominoPattern.append(pattern)
 
 allHTML = ""
 pageNum = 1
@@ -301,11 +321,36 @@ for puzzle in range(len(puzzleQuestion)):
         puzzleHTML = puzzleTemplate
         for column in range(1,8):
                 for row in range(1,8):
+                        # Determine which pattern to give this puzzle
+                        north = '1'
+                        south = 'X'
+                        east = 'X'
+                        west = '1'
+                        if index % 7 == 6:
+                            east = '1'
+                        if index > 41:
+                            south = '1'
+                        thisPattern = polyominoPattern[puzzle][index]
+                        # Do we make the line on the left thick or thin?
+                        leftPattern = -1
+                        if index % 7 != 0:
+                            leftPattern = polyominoPattern[puzzle][index - 1]
+                        if thisPattern == leftPattern:
+                            west = '0'
+                        # Do we make the line on the top thick or thin?
+                        upPattern = -1
+                        if index > 6:
+                            upPattern = polyominoPattern[puzzle][index - 7]
+                        if thisPattern == upPattern:
+                            north = '0'
                         replace = "Q" + str(column) + str(row)
                         thisNumber = puzzleQuestion[puzzle][index]
                         if int(thisNumber) == 0:
                                 thisNumber = "&nbsp;"
                         puzzleHTML = re.sub(replace,str(thisNumber),puzzleHTML)
+                        thisClass = 's' + north + south + east + west
+                        replace = "K" + str(column) + str(row)
+                        puzzleHTML = re.sub(replace,thisClass,puzzleHTML)
                         index += 1
         allHTML += puzzleHTML
         if (puzzle % 2) == 0:

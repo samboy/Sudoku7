@@ -127,11 +127,9 @@ here):  After opening up the `Prosperity-7-template.xml` file, click on `Set`
 then right click to add or remove blue squares (squares were we put
 number clues in a puzzle).
 
-Note that in order to print, the puzzle `.xml` files need to be 7x7 files
-using the same block arrangement (same set of heptominoes used the generate
-the 7x7 square).  The PDF generator can handle different location for the
-number hints; it can *not* handle a different arrangement of sub-blocks
-nor a different puzzle size (the PDF generator will refuse to print 
+The PDF generator can handle different location for the
+number hints or a different pattern of heptominos for the puzzle; it can 
+*not* handle a different puzzle size (the PDF generator will refuse to print 
 incompatible files).
 
 # Installing the Caulixtla008 font
