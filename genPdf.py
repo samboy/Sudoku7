@@ -284,30 +284,31 @@ else:
                 pattern = re.split(' ',g)
                 g = re.sub(' ','',g)
                 g = normString(g)
+                upsideDownG = normString(g[::-1])
 
                 z = re.split(' ',q)
                 usePuzzle = True
                 if(len(g) != 49):
                         print("Puzzle " + sys.argv[index] + " is not 7x7")
                         usePuzzle = False
-                if s in allSeen.keys():
+                if (s + "-" + g) in allSeen.keys():
                         print("Puzzle " + sys.argv[index] + " already seen in "
-                    + allSeen[s])
+                    + allSeen[(s + "-" + g)])
                         if not dupCheckOnly:
                                 print("Skipping")
                         usePuzzle = False
                         dupsFound = True
                 # Since we have point symmetry with the heptomino pattern, 
                 # rotated upside down puzzles are dups
-                if upsideDownS in allSeen.keys():
+                if (upsideDownS + "-" + upsideDownG) in allSeen.keys():
                         print("Puzzle " + sys.argv[index] + " is inverse of "
-                    + allSeen[upsideDownS])
+                    + allSeen[(upsideDownS + "-" + upsideDownG)])
                         if not dupCheckOnly:
                                 print("Skipping")
                         usePuzzle = False
                         dupsFound = True
                 else:
-                        allSeen[s] = sys.argv[index]
+                        allSeen[(s + "-" + g)] = sys.argv[index]
                 if usePuzzle:
                         puzzleQuestion.append(z)
                         polyominoPattern.append(pattern)
