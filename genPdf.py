@@ -298,8 +298,8 @@ else:
                                 print("Skipping")
                         usePuzzle = False
                         dupsFound = True
-                # Since we have point symmetry with the heptomino pattern, 
-                # rotated upside down puzzles are dups
+                # Let's see if, when we turn the puzzle upside down (180 
+                # degree rotation), if it's the same as another puzzle
                 if (upsideDownS + "-" + upsideDownG) in allSeen.keys():
                         print("Puzzle " + sys.argv[index] + " is inverse of "
                     + allSeen[(upsideDownS + "-" + upsideDownG)])
