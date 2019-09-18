@@ -33,13 +33,12 @@ A[y+4];*a^=1;rgp(3)a[c+o]^=b[c*o]=b[c*o+o];}void rgl(rg*u,rg*w,char*v
 <4;){x=*v++;s|=(x?255&x:1)<<8*q++;if(!x){rgn;rgp(17)rgf(u,w);return;}
 }rgn;}}}rg rgi(rg*m,rg*b,rg*a){if(*a&2)rgf(m,b);return m[*a^=3];}
 
-/* Example of API usage, non-Golfed (also public domain) */
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
 int main(int argc,char **argv){
-        uint32_t belt[40], mill[19], c, j, phase = 2;
+        uint32_t belt[40], mill[19], c, j, phase;
 	char *hashPrefix;
 	char line[1200];
 	char thisline[1200];
@@ -75,6 +74,7 @@ int main(int argc,char **argv){
 		strcpy(thisline,hashPrefix);
 		strcat(thisline,"|");
 		strcat(thisline,line);
+		phase = 2;
 		rgl(mill,belt,thisline);
         	for(c = 0; c < 8; c++) {
                 	j = rgi(mill, belt, &phase); /* Get number from PRNG */
