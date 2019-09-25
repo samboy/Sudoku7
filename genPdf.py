@@ -4,18 +4,18 @@
 # The code also works with Python3
 
 # While the puzzles look perfectly fine using the Weasyprint
-# default font, one can optionally install the Caulixtla008.woff
+# default font, one can optionally install the Caulixtla009.woff
 # font.  See this page for notes:
 # https://weasyprint.readthedocs.io/en/latest/features.html#fonts
 # Example #1 (Windows + Cygwin, should work elsewhere) (remove hashes):
 
 # mkdir ~/.fonts
-# cp Caulixtla008.woff ~/.fonts
+# cp Caulixtla009.woff ~/.fonts
 
 # Example #2 (CentOS 7 system-level install) (remove hashes):
 
-# mkdir /usr/share/fonts/Caulixtla008
-# cp Caulixtla008.woff /usr/share/fonts/Caulixtla008/
+# mkdir /usr/share/fonts/Caulixtla009
+# cp Caulixtla009.woff /usr/share/fonts/Caulixtla009/
 # fc-cache
 
 import sys, re
@@ -128,9 +128,9 @@ puzzleTemplate = """
 
 # The CSS for puzzles
 puzzleCSS = """
-body { font-family: Caulixtla008; }
+body { font-family: Caulixtla009; }
 .p7p {
-        font-family: Caulixtla008;
+        font-family: Caulixtla009;
         font-size: 24px;
         margin: 0;
         padding: 0;
@@ -138,7 +138,7 @@ body { font-family: Caulixtla008; }
         page-break-inside: avoid;
 }
 .p7p table {
-        font-family: Caulixtla008;
+        font-family: Caulixtla009;
         font-size: 24px;
         margin: 0;
         padding: 0;

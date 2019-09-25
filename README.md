@@ -132,10 +132,10 @@ number hints or a different pattern of heptominos for the puzzle; it can
 *not* handle a different puzzle size (the PDF generator will refuse to print 
 incompatible files).
 
-# Installing the Caulixtla008 font
+# Installing the Caulixtla009 font
 
 While the puzzles look perfectly fine using the Weasyprint
-default font, one can optionally install the Caulixtla008.woff
+default font, one can optionally install the Caulixtla009.woff
 font.  See this page for notes:
 
 >https://weasyprint.readthedocs.io/en/latest/features.html#fonts
@@ -144,13 +144,13 @@ Example #1 (Windows + Cygwin, should work elsewhere):
 
 ```
 mkdir ~/.fonts
-cp Caulixtla008.woff ~/.fonts
+cp Caulixtla009.woff ~/.fonts
 ```
 
 Example #2 (CentOS 7 system-level install):
 
 ```
-mkdir /usr/share/fonts/Caulixtla008
-cp Caulixtla008.woff /usr/share/fonts/Caulixtla008/
+mkdir /usr/share/fonts/Caulixtla009
+cp Caulixtla009.woff /usr/share/fonts/Caulixtla009/
 fc-cache
 ```
