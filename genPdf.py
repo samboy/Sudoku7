@@ -360,12 +360,12 @@ for puzzle in range(len(puzzleQuestion)):
                 allHTML += "</td></tr><tr><td>"
         if (puzzle % 6) == 5: # Page break after six puzzles
                 allHTML += "</td></tr></table></div>"
-                allHTML += title + " &mdash; Page " + str(pageNum)
+                #allHTML += title + " &mdash; Page " + str(pageNum)
                 pageNum += 1
 
 if (puzzle % 6) != 5:
         allHTML += "</td></tr></table></div>"
-        allHTML += "Page " + str(pageNum)
+        #allHTML += "Page " + str(pageNum)
 
 if dupCheckOnly:
     print("Dup check performed")
